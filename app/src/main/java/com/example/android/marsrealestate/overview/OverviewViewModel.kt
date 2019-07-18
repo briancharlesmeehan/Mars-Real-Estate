@@ -57,6 +57,5 @@ class OverviewViewModel : ViewModel() {
                 _response.value = response.body()
             }
         })
-        _response.value = "Set the Mars API Response here!"
     }
 }
