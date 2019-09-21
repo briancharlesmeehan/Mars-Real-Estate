@@ -64,10 +64,9 @@ class OverviewViewModel : ViewModel() {
                 _status.value = MarsApiStatus.LOADNG
 
                 val properties = MarsApi.retrofitService.getProperties()
-                if(properties.isNotEmpty()) {
-                    _status.value = MarsApiStatus.DONE
-                    _properties.value = properties
-                }
+                _status.value = MarsApiStatus.DONE
+                _properties.value = properties
+
             } catch (e: Exception) {
                 _status.value = MarsApiStatus.ERROR
             }
