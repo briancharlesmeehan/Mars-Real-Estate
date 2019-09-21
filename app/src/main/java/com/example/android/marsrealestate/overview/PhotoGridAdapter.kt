@@ -16,3 +16,34 @@
  */
 
 package com.example.android.marsrealestate.overview
+
+import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import com.example.android.marsrealestate.network.MarsProperty
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.example.android.marsrealestate.databinding.GridViewItemBinding
+
+class PhotoGridAdapter : ListAdapter<MarsProperty, PhotoGridAdapter.MarsPropertViewHolder>(DiffCallback) {
+    class MarsPropertViewHolder(private var binding: GridViewItemBinding) : RecyclerView.ViewHolder(binding.root) {
+
+    }
+
+    companion object DiffCallback : DiffUtil.ItemCallback<MarsProperty>() {
+        override fun areItemsTheSame(oldItem: MarsProperty, newItem: MarsProperty): Boolean {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun areContentsTheSame(oldItem: MarsProperty, newItem: MarsProperty): Boolean {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarsPropertViewHolder {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onBindViewHolder(holder: MarsPropertViewHolder, position: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+}
