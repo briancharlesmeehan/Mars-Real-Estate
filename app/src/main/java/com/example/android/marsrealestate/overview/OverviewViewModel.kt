@@ -34,8 +34,6 @@ class OverviewViewModel : ViewModel() {
 
     // The internal MutableLiveData String that stores the status of the most recent request
     private val _status = MutableLiveData<String>()
-
-    // The external immutable LiveData for the request status String
     val response: LiveData<String>
         get() = _status
 
