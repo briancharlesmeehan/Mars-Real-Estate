@@ -61,8 +61,11 @@ class OverviewViewModel : ViewModel() {
     private fun getMarsRealEstateProperties() {
         coroutineScope.launch {
             try {
+                _status.value = MarsApiStatus.LOADNG
+
                 val properties = MarsApi.retrofitService.getProperties()
                 if(properties.isNotEmpty()) {
+                    _status.value = MarsApiStatus.DONE
                     _properties.value = properties
                 }
             } catch (e: Exception) {
