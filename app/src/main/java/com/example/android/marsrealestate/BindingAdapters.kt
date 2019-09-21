@@ -30,6 +30,7 @@ import com.example.android.marsrealestate.network.MarsProperty
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<MarsProperty>?) {
 }
 
+// Use Glide to bind image from URL into grid_view_item ImageView
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
     imgUrl?.let {
