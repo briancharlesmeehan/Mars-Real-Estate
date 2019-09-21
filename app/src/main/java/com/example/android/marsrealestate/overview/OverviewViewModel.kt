@@ -35,9 +35,9 @@ enum class MarsApiStatus { LOADNG, ERROR, DONE }
 class OverviewViewModel : ViewModel() {
 
     // The internal MutableLiveData String that stores the status of the most recent request
-    private val _status = MutableLiveData<String>()
+    private val _status = MutableLiveData<MarsApiStatus>()
 
-    val response: LiveData<String>
+    val response: LiveData<MarsApiStatus>
         get() = _status
 
     private val _properties = MutableLiveData<List<MarsProperty>>()
@@ -66,7 +66,7 @@ class OverviewViewModel : ViewModel() {
                     _properties.value = properties
                 }
             } catch (e: Exception) {
-                _status.value = "Failure: ${e.message}"
+                _status.value = MarsApiStatus.ERROR
             }
         }
     }
