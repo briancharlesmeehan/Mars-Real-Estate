@@ -30,7 +30,8 @@ import com.example.android.marsrealestate.overview.PhotoGridAdapter
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<MarsProperty>?) {
     val adapter = recyclerView.adapter as PhotoGridAdapter // unsafe cast
-    adapter.submitList(data) // diffs new list from mars properties already being displayed
+    // diffs new list from mars properties already being displayed
+    adapter.submitList(data)
 }
 
 // Use Glide to bind image from URL into grid_view_item ImageView
