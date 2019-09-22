@@ -25,8 +25,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.marsrealestate.databinding.GridViewItemBinding
 import com.example.android.marsrealestate.network.MarsProperty
 
-class PhotoGridAdapter : ListAdapter<MarsProperty, PhotoGridAdapter.MarsPropertViewHolder>(DiffCallback) {
-    class MarsPropertViewHolder(private var binding: GridViewItemBinding) : RecyclerView.ViewHolder(binding.root) {
+class PhotoGridAdapter : ListAdapter<MarsProperty, PhotoGridAdapter.MarsPropertyViewHolder>(DiffCallback) {
+    class MarsPropertyViewHolder(private var binding: GridViewItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(marsProperty: MarsProperty) {
             binding.property = marsProperty
             // bind immediately to reduce RecyclerView calculations when displaying list
@@ -44,11 +44,11 @@ class PhotoGridAdapter : ListAdapter<MarsProperty, PhotoGridAdapter.MarsPropertV
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarsPropertViewHolder {
-        return MarsPropertViewHolder(GridViewItemBinding.inflate(LayoutInflater.from(parent.context)))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarsPropertyViewHolder {
+        return MarsPropertyViewHolder(GridViewItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
-    override fun onBindViewHolder(holder: MarsPropertViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MarsPropertyViewHolder, position: Int) {
         val marsProperty = getItem(position)
         holder.bind(marsProperty)
     }
