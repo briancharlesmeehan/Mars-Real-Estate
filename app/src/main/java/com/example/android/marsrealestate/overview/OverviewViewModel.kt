@@ -28,7 +28,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import java.util.*
 
-enum class MarsApiStatus { LOADNG, ERROR, DONE }
+enum class MarsApiStatus { LOADING, ERROR, DONE }
 
 /**
  * The [ViewModel] that is attached to the [OverviewFragment].
@@ -62,7 +62,7 @@ class OverviewViewModel : ViewModel() {
     private fun getMarsRealEstateProperties() {
         coroutineScope.launch {
             try {
-                _status.value = MarsApiStatus.LOADNG
+                _status.value = MarsApiStatus.LOADING
 
                 val properties = MarsApi.retrofitService.getProperties()
                 _status.value = MarsApiStatus.DONE

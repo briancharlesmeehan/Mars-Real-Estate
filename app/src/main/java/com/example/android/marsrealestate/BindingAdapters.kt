@@ -53,7 +53,7 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 @BindingAdapter("marsApiStatus")
 fun bindStatus(statusImageView: ImageView, status: MarsApiStatus?) {
     when (status) {
-        MarsApiStatus.LOADNG -> {
+        MarsApiStatus.LOADING -> {
             statusImageView.visibility = View.VISIBLE
             statusImageView.setImageResource(R.drawable.loading_animation)
         }
