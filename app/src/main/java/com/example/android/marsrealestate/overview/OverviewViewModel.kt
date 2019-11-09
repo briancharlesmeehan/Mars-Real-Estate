@@ -46,6 +46,12 @@ class OverviewViewModel : ViewModel() {
     val properties: LiveData<List<MarsProperty>>
         get() = _properties
 
+    //encapsulated LiveData to control navigation to selectedProperty detail screen
+    private val _navigateToSelectedProperty = MutableLiveData<MarsProperty>();
+
+    val navigateToSelectedProperty: LiveData<MarsProperty>
+        get() = _navigateToSelectedProperty
+
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 

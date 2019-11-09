@@ -23,7 +23,6 @@
 
     <!-- Data binding to the DetailViewModel -->
     <data>
-
         <variable
             name="viewModel"
             type="com.example.android.marsrealestate.detail.DetailViewModel" />
