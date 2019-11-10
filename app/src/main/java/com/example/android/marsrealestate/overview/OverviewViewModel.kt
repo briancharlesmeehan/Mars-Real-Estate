@@ -86,4 +86,14 @@ class OverviewViewModel : ViewModel() {
         super.onCleared()
         viewModelJob.cancel()
     }
+
+    // Change LiveData to trigger navigation
+    fun displayPropertyDetails(marsProperty: MarsProperty) {
+        _navigateToSelectedProperty.value = marsProperty
+    }
+
+    // Revert LiveData to signal navigation has occurred
+    fun displayPropertyDetailsCompleted() {
+        _navigateToSelectedProperty.value = null
+    }
 }
