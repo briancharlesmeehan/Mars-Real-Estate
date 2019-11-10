@@ -34,7 +34,17 @@ class DetailFragment : Fragment() {
         @Suppress("UNUSED_VARIABLE")
         val application = requireNotNull(activity).application
         val binding = FragmentDetailBinding.inflate(inflater)
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
+
+        // Mars Property that was clicked on
+        val marsProperty = DetailFragmentArgs.fromBundle(arguments!!).selectedProperty
+
+        // ViewModel factory using nav arg MarsProperty and application
+        val viewModelFactory = DetailViewModelFactory(marsProperty, application)
+
+        binding.viewModel = ViewModelProviders.of(
+                this, viewModelFactory).get(DetailViewModel::class.java)
+
         return binding.root
     }
 }
