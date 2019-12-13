@@ -27,4 +27,8 @@ data class MarsProperty(
         // map img_src in JSON to imgSrcUrl, match our naming conventions
         @Json(name = "img_src") val imgSrcUrl: String,
         val type: String,
-        val price: Double) : Parcelable
+        val price: Double) : Parcelable {
+
+    val isRent
+        get() = (type == "rent")
+}
